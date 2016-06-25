@@ -14,36 +14,14 @@
 ///
 /// DESKTOP
 ///
-.as-device-wide-desktop
-{
-	$as-appbar-height: $as-appbar-height-desktop;
-	$as-appbar-left-margin: -$as-sidebar-width-desktop;
-	$as-appbar-icon-tooltip-display: block;
-	$as-appbar-search-area-padding-left: $as-sidebar-width-wide-desktop;
-	$as-sidebar-width: $as-sidebar-width-wide-desktop;
-	$as-sidebar-width-desktop: $as-sidebar-width-wide-desktop;
-	$as-appbar-left-margin: -$as-sidebar-width-wide-desktop;
-	$as-apptitle-breadcrumbs-margin-left: 0px;
-	@import "all-responsive";
-}
-.as-device-desktop
-{
-	$as-appbar-height: $as-appbar-height-desktop;
-	$as-appbar-left-margin: -$as-sidebar-width-desktop;
-	$as-appbar-icon-tooltip-display: block;
-	$as-appbar-search-area-padding-left: $as-sidebar-width-desktop;
-	$as-sidebar-width: $as-sidebar-width-desktop;
-	$as-appbar-left-margin: -$as-sidebar-width-desktop;
-	$as-apptitle-breadcrumbs-margin-left: 0px;
-	@import "all-responsive";
-}
-
+.as-device-wide-desktop,
+.as-device-desktop,
 .as-device-tablet
 {
 	$as-appbar-height: $as-appbar-height-tablet;
-	$as-sidebar-width: $as-sidebar-width-tablet;
+	$as-sidebar-width: 300px;
 
-	$apishore-shift-menu-inner-width: $apishore-shift-menu-inner-width-tablet;
+	$apishore-shift-menu-inner-width: 300px;
 
 	$as-sidebar-padding-top: $as-sidebar-padding-top-tablet;
 	$as-sidebar-padding-bottom: $as-sidebar-padding-bottom-tablet;
