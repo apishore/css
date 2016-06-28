@@ -1,4 +1,4 @@
-<div class="image-editor">
+<div class="image-editor" style="margin-top:52px">
 	<div class="image-crop-panel" ng-show="cropMode">
 		<div class="image-crop-panel-inner">
 			<div class="previewArea">
@@ -29,20 +29,25 @@
      flow-file-added="added=true;!!{png:1,jpg:1,jpeg:1}[$file.getExtension()]"
 	 flow-files-submitted="fileUploadSubmit($file, $event, $flow)"
      flow-file-success="uploaded($file, $message)">
-		<div class="file-upload-preview">
-			<div class="file-upload-preview-actions">
-				<div class="btn-group-vertical">
-				    <button type="button" class="btn btn-sm btn-primary" flow-btn flow-attrs="{accept:'image/*'}">Upload</button>
-				    <button type="button"  class="btn btn-sm btn-info" ng-click="toCropMode()" ng-show="model">Crop</button>
-				    <button type="button"  class="btn btn-sm btn-danger" ng-click="remove()" ng-show="model">Remove</button>
-				</div>
-			</div>
+		<div class="file-upload-preview as-vbox">
 			<div class="file-upload-preview-image">
 				<img ng-src="{{imageSource}}" height="100" ng-show="model"/>
 			    <div class="help-inline" ng-show="(form.$submitted || formField.$dirty) && formField.$invalid">
 			        <small class="error" ng-show="formField.$error.required">Image is required</small>
 					<small class="error" ng-repeat="(key, message) in formField.$error.server">{{message}}</small>
 			    </div>
+			</div>
+			<div class="as-hbox">
+			    <button type="button" class="as-button asa-flat asa-primary" flow-btn flow-attrs="{accept:'image/*'}">
+			    	<span class="as-button-text">Upload</span>
+			    </button>
+<!-- 			    <button type="button"  class="as-button asa-flat" ng-click="toCropMode()" ng-show="model">
+			    	<span class="as-button-text">Crop</span>
+			    </button>
+ -->
+ 			    <button type="button"  class="as-button asa-flat" ng-click="remove()" ng-show="model">
+			    	<span class="as-button-text">Remove</span>
+			    </button>
 			</div>
 		</div>
 	</div>
