@@ -10,6 +10,7 @@ apishore.factory("uiListHelper", function($injector, $http, $stateParams, $state
     		//set default scope variables
     		$scope.items = [];
     		$scope.restApi = api;
+    		$scope.api = api;
     		$scope.listStateName = $state.current.name;
     		$scope.query = {
     				offset: 0,
