@@ -1,7 +1,8 @@
 .as-inline-form-holder
 {
-	background-color: map-get($as-palette-grey, 200);
+	border: solid 1px map-get($as-palette-grey, 500);
 	padding: $as-gutter;
+	margin: $as-gutter;
 	&.asa-compact
 	{
 		padding: $as-gutter / 2;

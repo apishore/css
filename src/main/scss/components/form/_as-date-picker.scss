@@ -110,6 +110,7 @@
     }
 
     // Date picker navigation
+   
     .as-date-picker__nav {
         position: relative;
 
@@ -122,10 +123,12 @@
             font-weight: 500;
         }
 
-        button {
+         .as-date-picker_nav_button {
             position: absolute !important;
-            top: $as-gutter;
-
+            display: block;
+            top: $as-gutter / 2;
+			width: 60px;
+			text-align: center;
             &:first-child {
                 left: $as-gutter * 2;
             }
