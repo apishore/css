@@ -250,9 +250,18 @@ apishore.factory("uiListHelper", function($injector, $http, $stateParams, $state
 					$scope.onCreate();
 				}
 			};
-			$scope.afterCreate = function(id, item)
+			$scope.afterCreate = function(id, item, scrollDown)
 			{
-				$scope.selectAll();
+				$scope.selectAll().then(function(){
+					if(scrollDown)
+					{
+						$timeout(function()
+						{
+							var s = elem.find('.as-vscroll');
+							s[0].scrollTop = s[0].scrollHeight;
+				        });
+					}
+				});
 				if($scope.onAfterCreate)
 				{
 					$scope.onAfterCreate({id:id, item:item});
