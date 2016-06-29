@@ -86,7 +86,7 @@ body.as-vbox
 }
 .as-gutter
 {
-	padding: $as-gutter;
+	border: solid $as-gutter transparent;
 }
 .as-left-gutter
 {

@@ -14,6 +14,7 @@
 	margin: $as-gutter / 2;
 	margin-left: 0px;
 	display: inline-block;
+	white-space: nowrap;
 	border: solid 1px map-get($as-palette-grey, 500);
 	border-radius: $as-md-chips-editor-item-height;
 }
