@@ -37,6 +37,7 @@
 	$as-sidebar-padding-bottom: $as-sidebar-padding-bottom-tablet;
 	$as-apptitle-breadcrumbs-margin-left: $as-gutter;
 	@import "all-responsive";
+	@import "dialog/as-dialog-phone";
 	.as-infobar-holder
 	{
 		position: fixed;
@@ -54,6 +55,7 @@
 	$as-infobar-header-bg-color: map-get($as-palette-primary, 500);
 	$as-apptitle-breadcrumbs-margin-left: $as-gutter;
 	@import "all-responsive";
+	@import "dialog/as-dialog-phone";
 	.as-infobar-holder
 	{
 		position: fixed;
