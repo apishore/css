@@ -48,7 +48,7 @@ $apishore-menu-color: #888;
 		max-width:none;
 		width:100%;
 		z-index: $as-zlevel-sidebar;
-		background-color: rgba(#000,0.5);
+		background-color: rgba(#fff, 0.5);
 		.apishore-shift-menu-inner-closer
 		{
 			position: absolute;
@@ -65,7 +65,7 @@ $apishore-menu-color: #888;
 			bottom:0px;
 			width: $apishore-shift-menu-inner-width;
 			min-width: 220px;
-			background-color: #fff;
+			background-color: #4b4b4b;
 			box-shadow:2px 0px 15px rgba(0, 0, 0, 0.35);
 		}
 	}
