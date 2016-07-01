@@ -1,4 +1,4 @@
-apishore.factory("apishoreAuth", function($timeout, $rootScope, $state, $http, $injector, $location) {
+apishore.factory("apishoreAuth", function($timeout, $rootScope, $state, $http, $injector, $location, $cookies) {
 	console.info("apishoreAuth init");
     $rootScope.userAuthorized = false;
     $rootScope.user = { roles: {} };
@@ -7,10 +7,11 @@ apishore.factory("apishoreAuth", function($timeout, $rootScope, $state, $http, $
 		{
 			var thus = this;
             var config = window.apishoreConfig;
-			$location.url('/');
 			$http.post(config.localUrl + "/api/account/logout").success(function() {
-				// FIXME: we get info twice here
-				thus.getUserInfo();
+				angular.forEach($cookies, function (cookie, key) {
+					$cookies.remove(key);
+				 });
+				$location.url(config.localUrl);
 				if (callback)
 				{
 					callback();
@@ -37,7 +38,7 @@ apishore.factory("apishoreAuth", function($timeout, $rootScope, $state, $http, $
 		getUserInfo: function(callback)
         {
         	var thus = this;
-            return $injector.get('InfoUserApi').get("").success(function (data) {
+            return $injector.get('UserProfileApi').get("").success(function (data) {
 				thus.user = data.data;
 				if (thus.user && thus.user.login || !!thus.user.authorized) {
                     $rootScope.user = data.data;
