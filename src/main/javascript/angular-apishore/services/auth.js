@@ -7,15 +7,13 @@ apishore.factory("apishoreAuth", function($timeout, $rootScope, $state, $http, $
 		{
 			var thus = this;
             var config = window.apishoreConfig;
-			$http.post(config.localUrl + "/api/account/logout").success(function() {
-				angular.forEach($cookies, function (cookie, key) {
-					$cookies.remove(key);
-				 });
-				$location.url(config.localUrl);
-				if (callback)
-				{
-					callback();
-				}
+            var cfg = {
+            	withCredentials: true
+            };
+            
+			$http.post(config.localUrl + "/api/account/logout", {}, cfg).success(function() {
+				$location.url("/");
+				$window.location.reload();
 			});
 		},
         login : function(returnUrl)
