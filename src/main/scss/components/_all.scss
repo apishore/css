@@ -1,7 +1,8 @@
 @import "integration/all-top";
-@import "layout/all";
 @import "navigation/all-top";
 @import "bg/all-top";
+
+@import "$common/all";
 
 .table-scrollable {
     overflow: auto;
