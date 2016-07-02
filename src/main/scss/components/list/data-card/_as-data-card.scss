@@ -31,12 +31,13 @@
 }
 .as-data-card-image
 {
-	width: 100%;
+	background-size: cover;
+	margin: -$as-gutter;
+	margin-bottom: $as-gutter;
 	height: 200px;
 }
 .as-data-card-inner
 {
-	border-top: solid 4px transparent;
 	padding: $as-gutter;
 }
 .as-data-card-title,
