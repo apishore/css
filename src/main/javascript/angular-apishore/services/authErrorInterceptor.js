@@ -1,6 +1,6 @@
 'use strict';
-apishore.factory('errorInterceptor', ['$injector', '$q',
-    function($injector, $q)
+apishore.factory('errorInterceptor', ['$injector', '$q', '$rootScope',
+    function($injector, $q, $rootScope)
     {
         return {
             'request': function(config)
@@ -13,14 +13,17 @@ apishore.factory('errorInterceptor', ['$injector', '$q',
             },
             'responseError': function(rejection)
             {
-                switch(rejection.status)
-                {
-                    case 401:
-                    case 403:
-                        var apishoreAuth = $injector.get('apishoreAuth');
-                        apishoreAuth.login();
-                        break;
-                }
+            	if(!$rootScope.publicSite)
+            	{
+	                switch(rejection.status)
+	                {
+	                    case 401:
+	                    case 403:
+	                        var apishoreAuth = $injector.get('apishoreAuth');
+	                        apishoreAuth.login();
+	                        break;
+	                }
+            	}
                 return $q.reject(rejection);
             }
         };

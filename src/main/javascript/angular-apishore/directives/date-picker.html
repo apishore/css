@@ -22,15 +22,15 @@
                 <!-- Calendar -->
                 <div class="as-date-picker__calendar" ng-if="!yearSelection">
                     <div class="as-date-picker__nav">
-                        <button class="as-button asa-round asa-xs asa-icon" as-ripple ng-click="previousMonth()">
+                        <a class="as-date-picker_nav_button asa-left" as-ripple ng-click="previousMonth()">
                              <i class="material-icons">chevron_left</i>
-                        </button>
+                        </a>
 
                         <span>{{ activeDate.format('MMMM YYYY') }}</span>
 
-                        <button class="as-button asa-round asa-xs asa-icon" as-ripple ng-click="nextMonth()">
+                        <a class="as-date-picker_nav_button asa-right" as-ripple ng-click="nextMonth()">
                             <i class="material-icons">chevron_right</i>
-                        </button>
+                        </a>
                     </div>
 
                     <div class="as-date-picker__days-of-week">
@@ -65,7 +65,9 @@
 
             <!-- Actions -->
             <div class="as-date-picker__actions">
-                <button class="as-button asa-flat asa-primary" as-ripple ng-click="closePicker()">Ok</button>
+                <button class="as-button asa-flat asa-primary" as-ripple ng-click="closePicker()">
+                	<span class="as-button-text">Ok</span>
+                </button>
             </div>
         </div>
     </div>
